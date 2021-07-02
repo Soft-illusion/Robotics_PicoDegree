@@ -1,0 +1,532 @@
+#VRML_SIM R2020a utf8
+WorldInfo {
+  basicTimeStep 16
+}
+Viewpoint {
+  orientation 0.026872843196113532 -0.9319906448508277 -0.36148483814552373 3.2799402455162214
+  position 0.4913555757681665 1.005125120470121 -1.5121705314264777
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+WoodenBox {
+  translation -0.99 0.04 -0.28
+  size 0.1 0.1 0.1
+}
+WoodenBox {
+  translation 0.37 0.05 0
+  name "wooden box(1)"
+  size 0.1 0.1 0.1
+}
+WoodenBox {
+  hidden linearVelocity_0 1.3729611008366326e-17 -1.4210854715202004e-16 4.735655291256427e-18
+  hidden angularVelocity_0 -1.6653345369377346e-16 2.2536051970037014e-17 -2.370374714292156e-50
+  translation -0.3078160845628502 0.049960760000000014 0.7559706482429157
+  rotation 2.8581871955065276e-16 1 -1.8956997620277728e-16 -0.03514198845441305
+  name "wooden box(2)"
+  size 0.1 0.1 0.1
+  mass 0.2
+}
+WoodenBox {
+  hidden linearVelocity_0 3.0561338352009147e-18 -1.4210854715202004e-16 -6.0717551664004635e-18
+  hidden angularVelocity_0 -1.6653345369377346e-16 -8.644102740319105e-18 -1.6653345369377346e-16
+  translation 1.0656868289974506 0.049960760000000014 0.8146746929209254
+  rotation -1.556263524486104e-17 1 6.5863906640618205e-18 -0.1968013255162371
+  name "wooden box(3)"
+  size 0.1 0.1 0.1
+  mass 0.2
+}
+WoodenBox {
+  hidden linearVelocity_0 -3.538522094317628e-17 -1.4210854715202004e-16 -1.4144951823998083e-17
+  hidden angularVelocity_0 -6.661338147750938e-16 -8.677789503976151e-17 4.996003610813203e-16
+  translation -0.2261319992009948 0.049960760000000014 -1.013010004301948
+  rotation 3.0591209456289996e-16 1 -3.175380872279474e-16 -0.04502683287897374
+  name "wooden box(4)"
+  size 0.1 0.1 0.1
+  mass 0.2
+}
+WoodenBox {
+  hidden linearVelocity_0 -6.637984448094622e-18 -1.5987211554602254e-16 -7.015807646720623e-18
+  hidden angularVelocity_0 -1.6653345369377343e-16 -2.6045648665049822e-17 1.6653345369377343e-16
+  translation 0.6710701932013267 0.049960760000000014 -1.1527785159373283
+  rotation 6.282282965713328e-17 1 -5.384288759621584e-16 -0.04505181268962379
+  name "wooden box(5)"
+  size 0.1 0.1 0.1
+  mass 0.2
+}
+E-puck {
+  hidden position_0_0 831.3913755054633
+  hidden position_0_1 843.4488701679624
+  hidden linearVelocity_0 -0.024619375643475442 2.6894815382123204e-09 0.004272621705372317
+  hidden angularVelocity_0 -0.0015195792806181794 -3.137479590541932e-06 -0.00870997982397416
+  hidden rotation_1 -1 0 0 2.0109149577579006
+  hidden linearVelocity_1 -0.02457586133384549 1.971845093651192e-07 0.004265029987334506
+  hidden angularVelocity_1 0.21325119749547652 -1.667482898974661e-06 1.228791340209914
+  hidden rotation_2 -1 0 0 1.5020390058977666
+  hidden linearVelocity_2 -0.02457579085649843 -2.0176056725329432e-07 0.004265017755731741
+  hidden angularVelocity_2 0.2132512013337382 -1.7053612330891613e-06 1.2287913365954857
+  translation -0.4396693319747035 -3.1981357479586234e-05 -0.43920684626354
+  rotation 8.401695808619076e-05 0.9999999913608295 -0.00010109150056326686 1.7426366194009442
+  controller "EPuckAvoideCollision"
+}
+Solid {
+  translation -0.4916653462556548 0.04958907968091047 -0.7584412283186303
+  rotation -0.684995867392326 0.5775954720990605 -0.44403167934968185 -2.886385586887251
+  children [
+    DEF Circle Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "textures/red_brick_wall.jpg"
+          ]
+        }
+        roughness 1
+        metalness 0
+      }
+      geometry DEF BALL_GEOMETRY Sphere {
+        radius 0.05
+        subdivision 2
+      }
+    }
+  ]
+  boundingObject USE BALL_GEOMETRY
+  physics Physics {
+  }
+  linearVelocity 0 -1.3570366640911004e-16 0
+}
+Solid {
+  translation 0.970178 0.04958907968091047 -0.681844
+  rotation 0.2287938288360491 0.5142981359600315 0.826529377115283 -2.929829542883372
+  children [
+    USE Circle
+  ]
+  name "solid(2)"
+  boundingObject USE BALL_GEOMETRY
+  physics Physics {
+  }
+  linearVelocity 0 -1.3570366640911004e-16 0
+}
+Solid {
+  translation -0.603253 0.04958907968091047 0.185914
+  rotation 0.2287938288360491 0.5142981359600315 0.826529377115283 -2.929829542883372
+  children [
+    USE Circle
+  ]
+  name "solid(9)"
+  boundingObject USE BALL_GEOMETRY
+  physics Physics {
+  }
+  linearVelocity 0 -1.3570366640911004e-16 0
+}
+Solid {
+  translation 0.31820139334114067 0.029215381370729997 -0.09702394322456584
+  rotation 0.708898759636533 0.17500951346084326 0.6832526756508047 1.6056371244138128
+  children [
+    DEF G0 Group {
+      children [
+        Transform {
+          translation 0 0.05 0
+          children [
+            DEF globe Shape {
+              geometry Sphere {
+                radius 0.03
+                subdivision 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 -0.05 0
+          children [
+            USE globe
+          ]
+        }
+        Shape {
+          geometry Cylinder {
+            height 0.1
+            radius 0.01
+          }
+        }
+      ]
+    }
+  ]
+  name "solid(6)"
+  contactMaterial "dumbbell"
+  boundingObject USE G0
+  physics Physics {
+    density -1
+    mass 2
+    centerOfMass [
+      0 0.01 0
+    ]
+  }
+  linearVelocity -1.8571822208827794e-07 -3.005682095818379e-06 2.787551842147899e-07
+  angularVelocity 9.300042516165138e-06 -4.149789169890265e-17 6.1960726093664475e-06
+}
+Robot {
+  translation 0.3272113437654897 0.03985816616150981 -0.7421232518867527
+  rotation 2.1262903031013865e-05 0.999999993128967 -0.00011528206660756783 -0.3494824882167615
+  children [
+    DEF Body Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        metalness 0
+      }
+      geometry Box {
+        size 0.1 0.05 0.2
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 43.071734774777504
+        anchor 0.06 0 0.05
+      }
+      device [
+        RotationalMotor {
+          name "wheel1"
+        }
+      ]
+      endPoint DEF wheel1 Solid {
+        translation 0.059999999998146564 8.121650259407479e-07 0.05000819150074721
+        rotation -0.40280103376647375 0.4024804038950579 0.8220467454330873 1.7647307977637032
+        children [
+          DEF Wheel Shape {
+            appearance PBRAppearance {
+              baseColor 0 1 0
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.02
+              radius 0.04
+            }
+          }
+        ]
+        name "wheel1"
+        boundingObject USE Wheel
+        physics DEF Wheel_Ph Physics {
+        }
+        linearVelocity 2.9990564187464272e-12 2.1203749378125324e-16 -7.400757282888805e-12
+        angularVelocity -1.9318781429405562e-10 5.6529179836530004e-12 -7.040646914300954e-11
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 12.86384845464638
+        anchor -0.06 0 0.05
+      }
+      device [
+        RotationalMotor {
+          name "wheel2"
+        }
+      ]
+      endPoint DEF wheel2 Solid {
+        translation -0.06000000000188266 3.82040897772381e-06 0.0500072889918923
+        rotation 0.146696946182277 -0.14658017733726464 0.9782608331076995 1.5919773624850606
+        children [
+          USE Wheel
+        ]
+        name "wheel2"
+        boundingObject USE Wheel
+        physics USE Wheel_Ph
+        linearVelocity 2.7665992145803284e-12 7.067876298736909e-17 -6.768517596859176e-12
+        angularVelocity -1.6579247396913458e-10 5.653642088948212e-12 -6.042235055040654e-11
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 43.07173592693703
+        anchor 0.06 0 -0.05
+      }
+      device [
+        RotationalMotor {
+          name "wheel3"
+        }
+      ]
+      endPoint DEF wheel3 Solid {
+        translation 0.05999999999796185 8.121803949316336e-07 -0.04999180850066873
+        rotation -0.4028006356036226 0.4024800060491499 0.8220471353201066 1.764730332366849
+        children [
+          USE Wheel
+        ]
+        name "wheel3"
+        boundingObject USE Wheel
+        physics USE Wheel_Ph
+        linearVelocity 2.468246311761963e-12 -7.068166817636904e-17 -7.594950271099475e-12
+        angularVelocity -1.9324194600773907e-10 5.654314759477312e-12 -7.043592650288777e-11
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 12.863852015507025
+        anchor -0.06 0 -0.05
+      }
+      device [
+        RotationalMotor {
+          name "wheel4"
+        }
+      ]
+      endPoint DEF wheel4 Solid {
+        translation -0.060000000002067275 3.820403221244445e-06 -0.04999271100497565
+        rotation 0.14669865331934598 -0.14658188311543846 0.9782603215180621 1.591977885326215
+        children [
+          USE Wheel
+        ]
+        name "wheel4"
+        boundingObject USE Wheel
+        physics USE Wheel_Ph
+        linearVelocity 2.2338547362891127e-12 2.827165823795541e-16 -6.956664151574748e-12
+        angularVelocity -1.6584392746381924e-10 5.654343398852034e-12 -6.044555494743912e-11
+      }
+    }
+    DistanceSensor {
+      translation -0.02 0 0.1
+      rotation 0 1 0 -1.87
+      children [
+        DEF sensor Shape {
+          appearance PBRAppearance {
+          }
+          geometry DEF Sensor Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "ds_right"
+    }
+    DistanceSensor {
+      translation 0.02 0 0.1
+      rotation 0 1 0 -1.27
+      children [
+        USE sensor
+      ]
+      name "ds_left"
+    }
+    Solid {
+      translation 0 0.15 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.2 0.5 0.4
+            metalness 0
+          }
+          geometry Box {
+            size 0.02 0.25 0.02
+          }
+        }
+      ]
+    }
+    SliderJoint {
+      jointParameters JointParameters {
+        position 0.12000000000000002
+        axis 0 1 0
+      }
+      device [
+        LinearMotor {
+          name "linear"
+          maxPosition 0.2
+        }
+      ]
+      endPoint Solid {
+        translation -0.085 0.17000000000000004 0
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0 0 1
+              metalness 0
+            }
+            geometry Box {
+              size 0.15 0.02 0.02
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              position 0.5499999999999999
+              axis 0 1 0
+              anchor -0.075 1 0
+            }
+            device [
+              RotationalMotor {
+                name "RM"
+              }
+            ]
+            endPoint Solid {
+              translation -0.07926262261029753 -4.440892098500626e-16 0.002613436144653298
+              rotation 0.2620426795258179 0.2622514342624575 0.9287399094117864 1.6438614508795923
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.5 0.4 0.2
+                    metalness 0
+                  }
+                  geometry Cylinder {
+                    height 0.02
+                    radius 0.01
+                  }
+                }
+                Camera {
+                  translation 0 0.01 0
+                  rotation 0 0 1 -1.57
+                  name "CAM"
+                  fieldOfView 1
+                  width 640
+                  height 640
+                }
+              ]
+            }
+          }
+        ]
+        name "solid(1)"
+      }
+    }
+  ]
+  name "Robot"
+  boundingObject USE Body
+  physics Physics {
+  }
+  recognitionColors [
+    0 0 0
+  ]
+  controller "Linear_actuator"
+  linearVelocity 2.6172124361939667e-12 -1.4779288903810081e-15 -7.1797610955506835e-12
+  angularVelocity 2.0328027436338587e-16 5.660982314692119e-12 -5.072195284831907e-15
+}
+RectangleArena {
+  floorSize 3 3
+}
+Khr2hv {
+  hidden position_0_0 -8.916880578327997e-09
+  hidden position_0_1 -4.1813347624758975e-08
+  hidden position_0_2 4.181200872092382e-08
+  hidden position_0_3 2.0874397486699927e-08
+  hidden position_0_4 -2.1112334723904762e-08
+  hidden linearVelocity_0 5.978821705207582e-08 -9.344378399261514e-10 7.052024125830492e-08
+  hidden angularVelocity_0 3.8071054524818874e-07 2.4260420179716706e-08 -3.363888408318124e-07
+  hidden linearVelocity_1 8.569574363452209e-08 7.994177547093133e-09 1.0217834593475094e-07
+  hidden angularVelocity_1 3.8073761517544507e-07 1.1342877496587878e-07 -3.363612683408908e-07
+  hidden rotation_2 0 -0.9999999999999999 0 4.2146848510894035e-08
+  hidden position_2_0 3.375719654409266e-08
+  hidden linearVelocity_2 5.101350701128707e-08 -2.215124772497745e-09 5.964378749455638e-08
+  hidden angularVelocity_2 3.7919315690811324e-07 2.406290533191479e-08 -3.351370290231304e-07
+  hidden rotation_3 -1 0 0 2.9802322387695313e-08
+  hidden position_3_0 -4.032197562403204e-08
+  hidden linearVelocity_3 4.031248503632049e-08 -3.0980612519826443e-10 4.711391567769157e-08
+  hidden angularVelocity_3 4.795659989740976e-07 2.3865264141762786e-08 -4.363317361283677e-07
+  hidden rotation_4 1 0 0 4.2146848510894035e-08
+  hidden position_4_0 5.2680676919863933e-08
+  hidden linearVelocity_4 9.940001197426554e-09 5.653407425858642e-09 1.3854723935812725e-08
+  hidden angularVelocity_4 6.252598404839829e-07 2.366762659327342e-08 -5.832177771732442e-07
+  hidden rotation_5 1 0 0 5.16191365590357e-08
+  hidden position_5_0 -6.511237187602226e-08
+  hidden linearVelocity_5 -1.321005456570691e-09 4.319375782972183e-10 4.762393566707466e-10
+  hidden angularVelocity_5 2.0672943113438921e-07 2.3470383768906732e-08 -1.612683553684628e-07
+  hidden rotation_6 0 -1 0 6.664001874625056e-08
+  hidden linearVelocity_6 6.862121424766613e-10 7.332522737139394e-10 1.3145797745217624e-09
+  hidden angularVelocity_6 2.0659774840826945e-07 2.327280151257416e-08 -1.6116170410598662e-07
+  hidden rotation_7 0 0.9999999999999999 0 4.2146848510894035e-08
+  hidden position_7_0 3.4564887695514396e-08
+  hidden linearVelocity_7 3.77610020141253e-08 -2.453695691073676e-10 4.649864694274533e-08
+  hidden angularVelocity_7 3.81951546349819e-07 2.4061981849047898e-08 -3.3792110335301927e-07
+  hidden rotation_8 1 0 0 2.9802322387695313e-08
+  hidden position_8_0 4.1647440742328614e-08
+  hidden linearVelocity_8 1.4313113151727215e-08 2.03276993386107e-09 2.1319295368846762e-08
+  hidden angularVelocity_8 4.92105312994284e-07 2.3863460067809654e-08 -4.4897622973361854e-07
+  hidden rotation_9 0.9999999999999999 0 0 4.2146848510894035e-08
+  hidden position_9_0 -5.2617427657566197e-08
+  hidden linearVelocity_9 -9.727795035573644e-09 2.511578793306559e-09 -5.6536917881371835e-09
+  hidden angularVelocity_9 6.993555680384769e-08 2.3665089258822712e-08 -2.3357163972566828e-08
+  hidden rotation_10 1 0 0 5.16191365590357e-08
+  hidden position_10_0 6.516204479450262e-08
+  hidden linearVelocity_10 -8.28531102085695e-09 5.842305713284663e-10 -6.442145221083588e-09
+  hidden angularVelocity_10 -3.493199195026496e-07 2.346668593353595e-08 3.9932417208619884e-07
+  hidden rotation_11 0 1 0 6.664001874625056e-08
+  hidden linearVelocity_11 -4.056543609521105e-09 -4.961307414280078e-10 -3.3899062337661594e-09
+  hidden angularVelocity_11 -3.4919565302842535e-07 2.3268173347822128e-08 3.9917453622083926e-07
+  hidden position_12_0 -5.943689501312021e-09
+  hidden linearVelocity_12 7.534552020523821e-08 -7.934984558310987e-09 8.755105386389051e-08
+  hidden angularVelocity_12 2.9221132128170656e-07 2.4260200866915157e-08 -2.4716629899588954e-07
+  hidden position_13_0 -3.052903231115402e-09
+  hidden linearVelocity_13 7.128150224569146e-08 -8.000031823437012e-09 8.058328053373064e-08
+  hidden angularVelocity_13 3.394793879594076e-07 2.423133600795723e-08 -2.0028210847216233e-07
+  hidden linearVelocity_14 6.045920059446908e-08 -7.406249243520807e-09 6.144166029208895e-08
+  hidden angularVelocity_14 3.583837433394915e-07 2.421979041073101e-08 -1.8153111856728723e-07
+  hidden rotation_15 -1 0 0 2.9802322387695313e-08
+  hidden position_15_0 6.487792879827807e-09
+  hidden linearVelocity_15 7.312937970633537e-08 -7.053143469271107e-09 8.535149595240065e-08
+  hidden angularVelocity_15 5.908125895167644e-07 2.426056302405702e-08 -5.482080012904662e-07
+  hidden position_16_0 -2.6687036871076987e-09
+  hidden linearVelocity_16 6.028303335014293e-08 -5.62185591488125e-09 7.343622457013293e-08
+  hidden angularVelocity_16 5.4773596868382e-07 2.4286865542130512e-08 -5.909359965104323e-07
+  hidden linearVelocity_17 2.757695034989358e-08 -4.1941520774931475e-09 4.2647757865570466e-08
+  hidden angularVelocity_17 5.636437587884017e-07 2.4277158677401878e-08 -5.751572465740596e-07
+  translation 0.4801060280598974 0.20867424934285195 1.250887020983824
+  rotation -0.2826314447488568 -0.6781300800308453 -0.6784239537313915 2.590925560216803
+}
+Khr2hv {
+  hidden position_0_0 -2.6115929421127024e-08
+  hidden position_0_1 1.2563075490222421e-09
+  hidden position_0_2 -1.2675263913161948e-09
+  hidden position_0_3 -5.6144592277270736e-08
+  hidden position_0_4 5.616823945717971e-08
+  hidden linearVelocity_0 1.4514648037046032e-11 -1.2122952214737712e-13 -2.281800314133815e-12
+  hidden angularVelocity_0 -3.590171456894282e-11 1.970439999928232e-12 -2.2644214447070417e-10
+  hidden rotation_1 0 0 1 2.9802322387695313e-08
+  hidden linearVelocity_1 -3.2137690564247137e-09 -2.614698581106092e-11 5.381324977420833e-10
+  hidden angularVelocity_1 4.254966300751484e-08 2.4591898829973012e-08 2.553663692673145e-07
+  hidden position_2_0 8.804721320115712e-08
+  hidden linearVelocity_2 1.336211453343577e-11 6.224554205402907e-12 -2.0593740343062757e-12
+  hidden angularVelocity_2 -3.6054774564072345e-11 1.7517623649319364e-12 -2.2636437862977072e-10
+  hidden rotation_3 -1 0 0 8.940696716308595e-08
+  hidden position_3_0 1.2058108965447927e-07
+  hidden linearVelocity_3 1.3307055546740103e-11 7.048731968476812e-12 -2.062877342595462e-12
+  hidden angularVelocity_3 -3.598185205023466e-11 1.775408689726063e-12 -2.264349066916422e-10
+  hidden rotation_4 -1 0 0 1.1920928955078128e-07
+  hidden position_4_0 -9.395731010406587e-08
+  hidden linearVelocity_4 1.325493838336164e-11 6.906914256219084e-12 -2.0654869510824403e-12
+  hidden angularVelocity_4 -3.5957466701769694e-11 1.7708245169757334e-12 -2.2639852599479182e-10
+  hidden rotation_5 -1 0 0 9.424321830774485e-08
+  hidden position_5_0 -9.405240722717582e-10
+  hidden linearVelocity_5 1.1283013550008235e-11 5.903999511502889e-12 -1.7772933399555074e-12
+  hidden angularVelocity_5 -3.568819396188887e-11 1.774459723631823e-12 -2.2644411070242627e-10
+  hidden linearVelocity_6 1.1366147972344749e-11 8.600369799043824e-12 -1.782297131235692e-12
+  hidden angularVelocity_6 -3.5878074386697e-11 1.75006753096699e-12 -2.264351242333826e-10
+  hidden position_7_0 -8.799730512961273e-08
+  hidden linearVelocity_7 1.3348404725641873e-11 -6.299472055104616e-12 -2.146892954788038e-12
+  hidden angularVelocity_7 -3.676964544016537e-11 1.875182306965832e-12 -2.2624255836525207e-10
+  hidden rotation_8 -1 0 0 8.940696716308595e-08
+  hidden position_8_0 -1.2061559668548086e-07
+  hidden linearVelocity_8 1.3292494400827286e-11 -6.9930542837918535e-12 -2.134711225187213e-12
+  hidden angularVelocity_8 -3.6006016629390885e-11 1.907310108624053e-12 -2.264187808934162e-10
+  hidden rotation_9 -1 0 0 1.1920928955078128e-07
+  hidden position_9_0 9.395755557238704e-08
+  hidden linearVelocity_9 1.3243932046347575e-11 -6.618998160025945e-12 -2.119958908024574e-12
+  hidden angularVelocity_9 -3.600956033069196e-11 1.8995179631934653e-12 -2.2641698700790446e-10
+  hidden rotation_10 -1 0 0 9.424321830774485e-08
+  hidden position_10_0 9.42762562076632e-10
+  hidden linearVelocity_10 1.1283806853107935e-11 -5.716926931853542e-12 -1.7946112100417582e-12
+  hidden angularVelocity_10 -3.617385781525798e-11 1.889998652329436e-12 -2.2641966478213586e-10
+  hidden linearVelocity_11 1.1356967260342826e-11 -8.086884248667859e-12 -1.8212301418150494e-12
+  hidden angularVelocity_11 -3.599141786379127e-11 1.8850110787380414e-12 -2.2639863879111173e-10
+  hidden rotation_12 1 0 0 5.960464477539063e-08
+  hidden position_12_0 -4.519064775261203e-08
+  hidden linearVelocity_12 9.22401681949308e-12 1.523388082347309e-11 -1.2502353606114585e-12
+  hidden angularVelocity_12 -3.587370735297976e-11 2.23395760269399e-12 -2.2642097492530707e-10
+  hidden rotation_13 0 0.9999999999999999 0 4.2146848510894035e-08
+  hidden position_13_0 -8.247127623372184e-09
+  hidden linearVelocity_13 9.365446308673606e-09 1.7007653289480082e-11 -1.5782992158381016e-09
+  hidden angularVelocity_13 6.974573214910937e-09 -4.494937276209768e-07 4.185027644726045e-08
+  hidden linearVelocity_14 3.532395683856136e-08 -1.4049206242816581e-11 -6.237639503332007e-09
+  hidden angularVelocity_14 8.14392913111355e-09 -5.244712538511973e-07 4.886882544732365e-08
+  hidden rotation_15 1 0 0 5.960464477539063e-08
+  hidden position_15_0 4.549208473375404e-08
+  hidden linearVelocity_15 1.6397491460329254e-11 -1.5627832361531072e-11 -2.7188549100487955e-12
+  hidden angularVelocity_15 -3.597801896905537e-11 1.6978331242189864e-12 -2.2638494234645438e-10
+  hidden rotation_16 0 -1 0 4.2146848510894035e-08
+  hidden position_16_0 -8.007438557248003e-09
+  hidden linearVelocity_16 -9.265962353463105e-09 -2.0720178868340525e-11 1.5257088120876394e-09
+  hidden angularVelocity_16 -7.013312601520264e-09 4.473803596379613e-07 -4.2104976662133144e-08
+  hidden linearVelocity_17 -3.2666941724683487e-08 -4.271948720694734e-11 5.190018056044773e-09
+  hidden angularVelocity_17 -5.797579570696124e-09 3.694303301467489e-07 -3.4808140277305836e-08
+  translation -0.8004863964778388 0.0566674928409682 1.3514716963644184
+  rotation 0.08236379876475161 0.047129599658614116 0.9954873206068767 -3.133794346714031
+  name "KHR-2HV(1)"
+}

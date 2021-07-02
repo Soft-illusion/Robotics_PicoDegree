@@ -1,0 +1,118 @@
+#VRML_SIM R2020a utf8
+WorldInfo {
+  basicTimeStep 16
+}
+Viewpoint {
+  orientation 0.05162674942810457 -0.9727643168039892 -0.22597403102205274 3.9209342821523454
+  position 4.986236508033779 5.101712957612091 -3.897309081377512
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+WoodenBox {
+  translation 0 0.04 0
+  size 0.1 0.1 0.1
+}
+WoodenBox {
+  translation 0.37 0.05 0
+  name "wooden box(1)"
+  size 0.1 0.1 0.1
+}
+WoodenBox {
+  translation 0 0.05 0.23
+  name "wooden box(2)"
+  size 0.1 0.1 0.1
+  mass 0.2
+}
+E-puck {
+  translation 0.3 0 0.31
+  controller "EPuckAvoideCollision"
+}
+Floor {
+  size 1 1
+}
+Solid {
+  translation 0 0.2 -0.2
+  children [
+    DEF Circle Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "textures/red_brick_wall.jpg"
+          ]
+        }
+        roughness 1
+        metalness 0
+      }
+      geometry DEF BALL_GEOMETRY Sphere {
+        radius 0.05
+        subdivision 2
+      }
+    }
+  ]
+  boundingObject USE BALL_GEOMETRY
+  physics Physics {
+  }
+}
+Solid {
+  translation 0 0.27 0
+  children [
+    USE Circle
+  ]
+  name "solid(1)"
+  boundingObject USE BALL_GEOMETRY
+  physics Physics {
+  }
+}
+Solid {
+  translation -0.5 0.05 0
+  children [
+    DEF Wall Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+        roughness 0.5
+        metalness 0
+      }
+      geometry Box {
+        size 0.05 0.1 1
+      }
+    }
+  ]
+  name "solid(2)"
+  boundingObject USE Wall
+  physics Physics {
+  }
+}
+Solid {
+  translation 0 0.05 0.5
+  rotation 0 1 0 1.5708
+  children [
+    USE Wall
+  ]
+  name "solid(3)"
+  boundingObject USE Wall
+  physics Physics {
+  }
+}
+Solid {
+  translation 0 0.05 -0.5
+  rotation 0 1 0 1.5708
+  children [
+    USE Wall
+  ]
+  name "solid(4)"
+  boundingObject USE Wall
+  physics Physics {
+  }
+}
+Solid {
+  translation 0.5 0.05 0
+  children [
+    USE Wall
+  ]
+  name "solid(5)"
+  boundingObject USE Wall
+  physics Physics {
+  }
+}
