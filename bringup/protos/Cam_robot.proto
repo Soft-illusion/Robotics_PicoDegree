@@ -1,0 +1,249 @@
+PROTO Cam_robot [
+    field SFVec3f    translation  -0.143941 0.0198605 0.202666
+    field SFRotation rotation     1.0911549263414444e-05 0.9999999999355068 3.1502938785775475e-06 2.349517532397045
+    field SFString   controller   "ros"
+  ]
+  {
+    Robot {
+      translation IS translation
+      rotation IS rotation
+      controller IS controller
+      children [
+        DEF Body Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            metalness 0
+          }
+          geometry Box {
+            size 0.1 0.05 0.2
+          }
+        }
+        HingeJoint {
+          jointParameters HingeJointParameters {
+            position 43.071734774777504
+            anchor 0.06 0 0.05
+          }
+          device [
+            RotationalMotor {
+              name "wheel1"
+            }
+          ]
+          endPoint DEF wheel1 Solid {
+            translation 0.05999999999814659 8.121650552084247e-07 0.05000819150074709
+            rotation -0.4028010337664737 0.4024804038950578 0.8220467454330874 1.764730797763703
+            children [
+              DEF Wheel Shape {
+                appearance PBRAppearance {
+                  baseColor 0 1 0
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.02
+                  radius 0.04
+                }
+              }
+            ]
+            name "wheel1"
+            boundingObject USE Wheel
+            physics DEF Wheel_Ph Physics {
+            }
+            linearVelocity 0 0 0
+            angularVelocity 0 0 0
+          }
+        }
+        HingeJoint {
+          jointParameters HingeJointParameters {
+            position 12.86384845464638
+            anchor -0.06 0 0.05
+          }
+          device [
+            RotationalMotor {
+              name "wheel2"
+            }
+          ]
+          endPoint DEF wheel2 Solid {
+            translation -0.06000000000188274 3.820408991828117e-06 0.050007288991891996
+            rotation 0.14669694618227674 -0.1465801773372645 0.9782608331076995 1.5919773624850606
+            children [
+              USE Wheel
+            ]
+            name "wheel2"
+            boundingObject USE Wheel
+            physics USE Wheel_Ph
+            linearVelocity 0 0 0
+            angularVelocity 0 0 0
+          }
+        }
+        HingeJoint {
+          jointParameters HingeJointParameters {
+            position 43.07173592693703
+            anchor 0.06 0 -0.05
+          }
+          device [
+            RotationalMotor {
+              name "wheel3"
+            }
+          ]
+          endPoint DEF wheel3 Solid {
+            translation 0.059999999997961795 8.121804171423719e-07 -0.04999180850066898
+            rotation -0.4028006356036226 0.40248000604914985 0.8220471353201069 1.7647303323668493
+            children [
+              USE Wheel
+            ]
+            name "wheel3"
+            boundingObject USE Wheel
+            physics USE Wheel_Ph
+            linearVelocity 0 0 0
+            angularVelocity 0 0 0
+          }
+        }
+        HingeJoint {
+          jointParameters HingeJointParameters {
+            position 12.863852015507025
+            anchor -0.06 0 -0.05
+          }
+          device [
+            RotationalMotor {
+              name "wheel4"
+            }
+          ]
+          endPoint DEF wheel4 Solid {
+            translation -0.06000000000206729 3.820403236431957e-06 -0.04999271100497582
+            rotation 0.1466986533193458 -0.14658188311543838 0.9782603215180621 1.5919778853262148
+            children [
+              USE Wheel
+            ]
+            name "wheel4"
+            boundingObject USE Wheel
+            physics USE Wheel_Ph
+            linearVelocity 0 0 0
+            angularVelocity 0 0 0
+          }
+        }
+        DistanceSensor {
+          translation -0.02 0 0.1
+          rotation 0 1 0 -1.87
+          children [
+            DEF sensor Shape {
+              appearance PBRAppearance {
+              }
+              geometry DEF Sensor Box {
+                size 0.01 0.01 0.01
+              }
+            }
+          ]
+          name "ds_right"
+        }
+
+        GPS {
+          name "global"
+        }
+
+        InertialUnit {
+          name "IMU"
+        }
+
+        Lidar {
+          translation 0 0.06 0
+          name "Lidar"
+          fieldOfView 6.28
+          numberOfLayers 1
+          horizontalResolution 1024
+          maxRange 5.0 
+        }
+
+        DistanceSensor {
+          translation 0.02 0 0.1
+          rotation 0 1 0 -1.27
+          children [
+            USE sensor
+          ]
+          name "ds_left"
+        }
+        Solid {
+          translation 0 0.15 0
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.2 0.5 0.4
+                metalness 0
+              }
+              geometry Box {
+                size 0.02 0.25 0.02
+              }
+            }
+          ]
+        }
+        SliderJoint {
+          jointParameters JointParameters {
+            position 0.12
+            axis 0 1 0
+          }
+          device [
+            LinearMotor {
+              name "linear"
+              maxPosition 0.2
+            }
+          ]
+          endPoint Solid {
+            translation -0.085 0.17 0
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0 0 1
+                  metalness 0
+                }
+                geometry Box {
+                  size 0.15 0.02 0.02
+                }
+              }
+              HingeJoint {
+                jointParameters HingeJointParameters {
+                  position 0.5499999999999999
+                  axis 0 1 0
+                  anchor -0.075 1 0
+                }
+                device [
+                  RotationalMotor {
+                    name "RM"
+                  }
+                ]
+                endPoint Solid {
+                  translation -0.07926262261029753 -4.440892098500626e-16 0.002613436144653298
+                  rotation 0.2620426795258179 0.2622514342624575 0.9287399094117864 1.6438614508795923
+                  children [
+                    Shape {
+                      appearance PBRAppearance {
+                        baseColor 0.5 0.4 0.2
+                        metalness 0
+                      }
+                      geometry Cylinder {
+                        height 0.02
+                        radius 0.01
+                      }
+                    }
+                    Camera {
+                      translation 0 0.01 0
+                      rotation 0 0 1 -1.57
+                      name "CAM"
+                      fieldOfView 1
+                      width 640
+                      height 640
+                    }
+                  ]
+                }
+              }
+            ]
+            name "solid(1)"
+          }
+        }
+      ]
+      name "Cam_robot"
+      boundingObject USE Body
+      physics Physics {
+      }
+      recognitionColors [
+        0 0 0
+      ]
+    }
+  }
