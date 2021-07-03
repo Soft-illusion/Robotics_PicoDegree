@@ -136,60 +136,20 @@ PROTO Cam_robot [
         }
 
         GPS {
-          children [
-            Solid {
-              translation 0 0.03 0
-              children [
-                Shape {
-                  appearance PBRAppearance {
-                  }
-                  geometry Cylinder {
-                    height 0.02
-                    radius 0.01
-                  }
-                }
-              ]
-            }
-          ]
           name "global"
         }
 
         InertialUnit {
-          children [
-            Solid {
-              translation 0 0.03 0
-              children [
-                Shape {
-                  appearance PBRAppearance {
-                  }
-                  geometry Cylinder {
-                    height 0.02
-                    radius 0.01
-                  }
-                }
-              ]
-            }
-          ]
           name "IMU"
         }
 
         Lidar {
-          children [
-            Solid {
-              translation 0 0.03 0
-              children [
-                Shape {
-                  appearance PBRAppearance {
-                  }
-                  geometry Cylinder {
-                    height 0.02
-                    radius 0.01
-                  }
-                }
-              ]
-            }
-          ]
+          translation 0 0.06 0
           name "Lidar"
+          fieldOfView 6.28
+          numberOfLayers 1
+          horizontalResolution 1024
+          maxRange 5.0 
         }
 
         DistanceSensor {
