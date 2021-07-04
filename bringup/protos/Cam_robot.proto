@@ -183,6 +183,7 @@ PROTO Cam_robot [
             LinearMotor {
               name "linear"
               maxPosition 0.2
+              minPosition 0
             }
           ]
           endPoint Solid {
