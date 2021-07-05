@@ -12,7 +12,7 @@ SensorEnable::SensorEnable(ros::NodeHandle* nodehandle):nh_(*nodehandle){
 }
 
 void SensorEnable::Initialize_sensors(){
-    std::vector<std::string> sensors{"/CAM" , "/Lidar" ,"/ds_left" , "/ds_right" , "/keyboard"};
+    std::vector<std::string> sensors{"/CAM" , "/Lidar" ,"/ds_left" , "/ds_right" , "/keyboard" , "/global" , "/IMU"};
     std::vector<ros::ServiceClient> vec_client; 
     for (auto sensor = sensors.begin(); sensor != sensors.end(); ++sensor){
         vec_client.push_back(nh_.serviceClient<webots_ros::set_int>(SensorEnable::robot_name_+ *sensor +"/enable"));
