@@ -8,4 +8,12 @@
     <arg name="world" value="$(find bringup)/worlds/4_wheels_robot_fully_loaded.wbt"/>
   </include>
 
+  <!-- URDF -->
+  <arg name="model" value="$(find bringup)/robot_description/urdf/4wheelrobot.xacro"/>
+	<param name="robot_description" command="$(find xacro)/xacro $(arg model)" />
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen"/>
+
+  <!-- Rviz -->
+	<include file="$(find bringup)/visualization/launch/4wheelrobot_viz.launch"/>
+
 </launch>
