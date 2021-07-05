@@ -80,7 +80,7 @@
   <joint name="base_to_front_left_wheel" type="fixed">
     <parent link="base_link"/>
     <child link="front_left_wheel"/>
-    <origin xyz="0.06 0.05 0"/>
+    <origin xyz="0.06 0.06 0"/>
   </joint>
 
 
@@ -97,7 +97,7 @@
   <joint name="base_to_front_right_wheel" type="fixed">
     <parent link="base_link"/>
     <child link="front_right_wheel"/>
-    <origin xyz="0.06 -0.05 0"/>
+    <origin xyz="0.06 -0.06 0"/>
   </joint>
 
 
@@ -114,7 +114,7 @@
   <joint name="base_to_back_left_wheel" type="fixed">
     <parent link="base_link"/>
     <child link="back_left_wheel"/>
-    <origin xyz="-0.06 0.05 0"/>
+    <origin xyz="-0.06 0.06 0"/>
   </joint>
 
 
@@ -131,8 +131,23 @@
   <joint name="base_to_back_right_wheel" type="fixed">
     <parent link="base_link"/>
     <child link="back_right_wheel"/>
-    <origin xyz="-0.06 -0.05 0"/>
+    <origin xyz="-0.06 -0.06 0"/>
   </joint>
 
+  <!-- Distance sensor Left-->
+
+  <!-- Distance sensor Right-->
+
+  <!-- Linear actuator of type "continuous"-->
+
+  <!-- Rotary camera actuator of type "continuous"-->
+
+  <!-- Lidar above on base_link-->
+
+  <!-- nav_link of type "continuous"-->
+
+  <!-- IMU link on base_link-->
+
+  <!-- GPS link on base_link-->
 
 </robot>
