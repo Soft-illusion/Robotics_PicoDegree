@@ -11,8 +11,12 @@
 #include <signal.h>
 #include <stdio.h>
 #include <iostream>
+#include <geometry_msgs/Twist.h>
 
 #define TIME_STEP 32
+#define WHEEL_BASE 0.1
+#define WHEEL_RADIUS 0.06
+
 
 
 class SensorEnable{
@@ -26,14 +30,14 @@ class SensorEnable{
         webots_ros::set_float srv_zero;
         std::vector<ros::ServiceClient> vec_velocity_;
         webots_ros::set_float srv_act;
-
-
-
+        ros::Subscriber subscribe_cmd_vel_;
+        float linear_vel, angular_vel ;
 
     public:
         SensorEnable(ros::NodeHandle* nodehandle);
         void NameCallBack(const std_msgs::String& msg);
         void KeyboardCallBack(const webots_ros::Int32Stamped& msg);
+        void CmdvelCallBack(const geometry_msgs::Twist& msg);
         void Initialize_sensors();
         void teleop(int);
 };
