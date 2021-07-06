@@ -12,6 +12,8 @@ rospy
 roscpp
 std_msgs
 webots_ros
+sensor_msgs
+geometry_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -209,3 +211,7 @@ ${catkin_INCLUDE_DIRS}
 add_executable(enable src/sensor_enable.cpp)
 target_link_libraries(enable ${catkin_LIBRARIES})
 add_dependencies (enable ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+add_executable(localize src/localization.cpp)
+target_link_libraries(localize ${catkin_LIBRARIES})
+add_dependencies (localize ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
