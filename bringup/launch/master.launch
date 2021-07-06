@@ -10,6 +10,7 @@
   <node name="Teleop" pkg="bringup" type="enable" respawn="false" output="screen"/>
   <node name="Localization" pkg="bringup" type="localize" respawn="false" output="screen"/>
   <node name="map_server" pkg="map_server" type="map_server" args="$(find bringup)/maps/home.yaml"/>
+  <node name="Remap" pkg="navigation" type="remap" respawn="false" output="screen"/>
 
-  
+  <include file="$(find navigation)/launch/move_base.launch"/>
 </launch>

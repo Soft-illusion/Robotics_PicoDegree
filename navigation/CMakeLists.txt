@@ -206,6 +206,6 @@ ${catkin_INCLUDE_DIRS}
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
-# add_executable(remap src/remapping.cpp)
-# target_link_libraries(remap ${catkin_LIBRARIES})
-# add_dependencies (remap ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_executable(remap src/remapping.cpp)
+target_link_libraries(remap ${catkin_LIBRARIES})
+add_dependencies (remap ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
