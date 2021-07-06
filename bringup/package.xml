@@ -50,7 +50,7 @@
   <!--   <doc_depend>doxygen</doc_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>roscpp</build_depend>
-  <build_depend>webots-ros</build_depend>
+  <build_depend>webots_ros</build_depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->

@@ -81,7 +81,7 @@ void SensorEnable::teleop(int key){
         break;
 
       case 315 :
-        srv_act.request.value = 1.0;
+        srv_act.request.value = 2.0;
         vec_velocity_[0].call(srv_act);
         vec_velocity_[1].call(srv_act);
         vec_velocity_[2].call(srv_act);
@@ -93,7 +93,7 @@ void SensorEnable::teleop(int key){
         break;
 
       case 317 :
-        srv_act.request.value = -1.0;
+        srv_act.request.value = -2.0;
         vec_velocity_[0].call(srv_act);
         vec_velocity_[1].call(srv_act);
         vec_velocity_[2].call(srv_act);
@@ -105,10 +105,10 @@ void SensorEnable::teleop(int key){
         break;
 
       case 316 :
-        srv_act.request.value = 0.5;
+        srv_act.request.value = 1;
         vec_velocity_[0].call(srv_act);
         vec_velocity_[2].call(srv_act);
-        srv_act.request.value = -0.5;
+        srv_act.request.value = -1;
         vec_velocity_[1].call(srv_act);
         vec_velocity_[3].call(srv_act);
 
@@ -118,10 +118,10 @@ void SensorEnable::teleop(int key){
         break;
 
       case 314 :
-        srv_act.request.value = -0.5;
+        srv_act.request.value = -1;
         vec_velocity_[0].call(srv_act);
         vec_velocity_[2].call(srv_act);
-        srv_act.request.value = 0.5;
+        srv_act.request.value = 1;
         vec_velocity_[1].call(srv_act);
         vec_velocity_[3].call(srv_act);
 
