@@ -135,19 +135,82 @@
   </joint>
 
   <!-- Distance sensor Left-->
+  <link name="left_distance_sensor">
+  </link>
+  <joint name="base_to_left_distance_sensor" type="fixed">
+    <parent link="base_link"/>
+    <child link="left_distance_sensor"/>
+    <origin xyz="0.1 0.02 0" rpy="0 0 0.3"/>
+    <!-- <origin rpy="1.57 1.57 -1.57"/> -->
+  </joint>
 
   <!-- Distance sensor Right-->
+  <link name="right_distance_sensor">
+  </link>
+  <joint name="base_to_right_distance_sensor" type="fixed">
+    <parent link="base_link"/>
+    <child link="right_distance_sensor"/>
+    <origin xyz="0.1 -0.02 0" rpy="0 0 -0.3"/>
+  </joint>
 
   <!-- Linear actuator of type "continuous"-->
+  <link name="linear_link">
+  </link>
+  <joint name="base_to_linear_link" type="continuous">
+    <parent link="base_link"/>
+    <child link="linear_link"/>
+  </joint>
 
-  <!-- Rotary camera actuator of type "continuous"-->
+  <!-- Rotary actuator of type "continuous"-->
+  <link name="rotary_link">
+  </link>
+  <joint name="linear_to_rotary_link" type="fixed">
+    <parent link="linear_link"/>
+    <child link="rotary_link"/>
+    <origin xyz="0 0.15 0"/>
+  </joint>
+
+    <!-- Camera actuator of type "continuous"-->
+  <link name="camera_link">
+  </link>
+  <joint name="rotary_to_camera_link" type="continuous">
+    <parent link="rotary_link"/>
+    <child link="camera_link"/>
+  </joint>
 
   <!-- Lidar above on base_link-->
+  <link name="lidar">
+  </link>
+  <joint name="base_to_lidar" type="fixed">
+    <parent link="base_link"/>
+    <child link="lidar"/>
+    <origin xyz="0 0 0.06"/>
+  </joint>
 
   <!-- nav_link of type "continuous"-->
+  <link name="nav_link">
+  </link>
+  <joint name="base_to_nav_link" type="continuous">
+    <parent link="base_link"/>
+    <child link="nav_link"/>
+  </joint>
 
   <!-- IMU link on base_link-->
+  <link name="imu">
+  </link>
+  <joint name="base_to_imu" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu"/>
+    <origin xyz="0 0 0"/>
+  </joint>
 
   <!-- GPS link on base_link-->
+  <link name="gps">
+  </link>
+  <joint name="base_to_gps" type="fixed">
+    <parent link="base_link"/>
+    <child link="gps"/>
+    <origin xyz="0 0 0"/>
+  </joint>
 
 </robot>
