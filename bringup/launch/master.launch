@@ -5,4 +5,16 @@
     <arg name="world" value="$(find bringup)/worlds/4_wheels_robot_fully_loaded.wbt"/>
   </include>
 
+  <!-- Sensor Enable -->
+  <node name="Teleop" pkg="bringup" type="enable" respawn="false" output="screen"/>
+
+<!-- Dynamic transform -->
+  <node name="Dynamic" pkg="bringup" type="dynamic_link_camera" respawn="false" output="screen"/>
+
+  <!-- URDF -->
+  <include file="$(find bringup)/robot_description/launch/description.launch"/>
+
+  <!-- Rviz -->
+	<include file="$(find bringup)/visualization/launch/4wheelrobot_viz.launch"/>
+
 </launch>

@@ -209,3 +209,7 @@ ${catkin_INCLUDE_DIRS}
 add_executable(enable src/sensor_enable.cpp)
 target_link_libraries(enable ${catkin_LIBRARIES})
 add_dependencies (enable ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+add_executable(dynamic_link_camera src/static_camera.cpp)
+target_link_libraries(dynamic_link_camera ${catkin_LIBRARIES})
+add_dependencies (dynamic_link_camera ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
