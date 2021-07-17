@@ -215,7 +215,3 @@ add_dependencies (enable ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_T
 add_executable(dynamic_link_camera src/static_camera.cpp)
 target_link_libraries(dynamic_link_camera ${catkin_LIBRARIES})
 add_dependencies (dynamic_link_camera ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-
-add_executable(localize src/localization.cpp)
-target_link_libraries(localize ${catkin_LIBRARIES})
-add_dependencies (localize ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
