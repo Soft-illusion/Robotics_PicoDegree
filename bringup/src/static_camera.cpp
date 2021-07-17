@@ -61,7 +61,7 @@ void StaticCamera::ToEulerAngles(float x, float y , float z , float w ) {
 void StaticCamera::publish_linear_link(float value){
   static tf::TransformBroadcaster br;
   tf::Transform transform;
-  transform.setOrigin( tf::Vector3(0,0,value));
+  transform.setOrigin( tf::Vector3(0,0,value+0.05/2)); //Robot height/2 offset for linear link
   tf::Quaternion q;
   q.setRPY(0, 0, 0);
   // transform.setRotation(tf::Quaternion(current_rot_x,current_rot_y,current_rot_z,current_rot_w));

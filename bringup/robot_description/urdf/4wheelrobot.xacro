@@ -1,50 +1,25 @@
 <?xml version="1.0"?>
 
-<robot
-    xmlns:gazebo="http://playerstage.sourceforge.net/gazebo/xmlschema/#gz"
-    xmlns:model="http://playerstage.sourceforge.net/gazebo/xmlschema/#model"
-    xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
-    xmlns:body="http://playerstage.sourceforge.net/gazebo/xmlschema/#body"
-    xmlns:geom="http://playerstage.sourceforge.net/gazebo/xmlschema/#geom"
-    xmlns:joint="http://playerstage.sourceforge.net/gazebo/xmlschema/#joint"
-    xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
-    xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
-    xmlns:rendering="http://playerstage.sourceforge.net/gazebo/xmlschema/#rendering"
-    xmlns:physics="http://playerstage.sourceforge.net/gazebo/xmlschema/#physics"
-    xmlns:xacro="http://www.ros.org/wiki/xacro" name="4wheelrobot">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="4wheelrobot">
 
 
-   <!-- Physical Material Macros -->
-    <material name="Red">
-    	<color rgba="1.0 0 0 1.0"/>
-    </material>
-    <material name="Green">
-    	<color rgba="0 1.0 0 1.0"/>
-    </material>
-    <material name="Blue">
-    	<color rgba="0 0 1.0 0.5"/>
-    </material>
-    <material name="Black">
-    	<color rgba="0 0 0 1.0"/>
-    </material>
-    <material name="Aqua">
-    	<color rgba="0 1.0 1.0 1.0"/>
-    </material>
-    <material name="black">
-      <color rgba="0.2 0.2 0.2 1."/>
-    </material>
-    <material name="blue">
-      <color rgba="0.3 0.57 1. 1."/>
-    </material>
+  <!-- Color Macros -->
+  <material name="red">
+    <color rgba="1.0 0 0 1.0"/>
+  </material>
+  <material name="blue">
+    <color rgba="0.3 0.57 1. 1."/>
+  </material>
 
 
-
-  <xacro:property name="wheelbase" value="0.1" />
+  <!-- Base Properties -->
   <xacro:property name="body_length" value="0.2" />
   <xacro:property name="body_width" value="0.1" />
   <xacro:property name="body_height" value="0.05" />
   <xacro:property name="ground_offset" value="0.04" />
-
+ 
+  <!-- Wheel Properties -->
+  <xacro:property name="wheelbase" value="0.1" />
   <xacro:property name="wheel_radius" value="0.04" />
   <xacro:property name="wheel_length" value="0.02" />
 
