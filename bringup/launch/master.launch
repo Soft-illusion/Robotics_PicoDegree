@@ -22,7 +22,4 @@
   <!-- Rviz -->
 	<include file="$(find bringup)/visualization/launch/4wheelrobot_viz.launch"/>
   
-  <!-- Localization -->
-  <node name="Localization" pkg="bringup" type="localize" respawn="false" output="screen"/>
-  
 </launch>
