@@ -24,5 +24,8 @@
   
   <!-- Localization -->
   <node name="Localization" pkg="bringup" type="localize" respawn="false" output="screen"/>
+
+  <!-- Rviz -->
+	<include file="$(find navigation)/launch/move_base.launch"/>
   
 </launch>
