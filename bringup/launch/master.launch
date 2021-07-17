@@ -2,13 +2,18 @@
 <launch>
   <!-- start Webots -->
   <include file="$(find webots_ros)/launch/webots.launch">
-    <arg name="world" value="$(find bringup)/worlds/4_wheels_robot_fully_loaded.wbt"/>
+    <arg name="world" value="$(find bringup)/worlds/home.wbt"/>
+    <arg name="mode" value="realtime"/>
+    <arg name="no_gui" value="false"/>
   </include>
 
   <!-- Sensor Enable -->
   <node name="Teleop" pkg="bringup" type="enable" respawn="false" output="screen"/>
+  
+  <!-- MAP -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find bringup)/maps/home.yaml"/>
 
-<!-- Dynamic transform -->
+  <!-- Dynamic transform -->
   <node name="Dynamic" pkg="bringup" type="dynamic_link_camera" respawn="false" output="screen"/>
 
   <!-- URDF -->
@@ -16,5 +21,8 @@
 
   <!-- Rviz -->
 	<include file="$(find bringup)/visualization/launch/4wheelrobot_viz.launch"/>
-
+  
+  <!-- Localization -->
+  <node name="Localization" pkg="bringup" type="localize" respawn="false" output="screen"/>
+  
 </launch>

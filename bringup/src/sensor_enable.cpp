@@ -7,8 +7,20 @@ SensorEnable::SensorEnable(ros::NodeHandle* nodehandle):nh_(*nodehandle){
 
     std::cout<<srv_timestep.request.value<<std::endl;
     subscribe_name_ = nh_.subscribe("/model_name", 1, &SensorEnable::NameCallBack,this);
+    subscribe_cmd_vel_ = nh_.subscribe("/cmd_vel", 1, &SensorEnable::CmdvelCallBack,this);
 
     
+}
+
+void SensorEnable::CmdvelCallBack(const geometry_msgs::Twist& msg){
+  linear_vel = msg.linear.x;
+  angular_vel = msg.angular.z;
+  srv_act.request.value = (linear_vel - angular_vel*WHEEL_BASE)/WHEEL_RADIUS;
+  vec_velocity_[0].call(srv_act);
+  vec_velocity_[2].call(srv_act);
+  srv_act.request.value = (linear_vel + angular_vel*WHEEL_BASE)/WHEEL_RADIUS;
+  vec_velocity_[1].call(srv_act);
+  vec_velocity_[3].call(srv_act);
 }
 
 void SensorEnable::Initialize_sensors(){
@@ -81,7 +93,7 @@ void SensorEnable::teleop(int key){
         break;
 
       case 315 :
-        srv_act.request.value = 1.0;
+        srv_act.request.value = 2.0;
         vec_velocity_[0].call(srv_act);
         vec_velocity_[1].call(srv_act);
         vec_velocity_[2].call(srv_act);
@@ -93,7 +105,7 @@ void SensorEnable::teleop(int key){
         break;
 
       case 317 :
-        srv_act.request.value = -1.0;
+        srv_act.request.value = -2.0;
         vec_velocity_[0].call(srv_act);
         vec_velocity_[1].call(srv_act);
         vec_velocity_[2].call(srv_act);
@@ -105,10 +117,10 @@ void SensorEnable::teleop(int key){
         break;
 
       case 316 :
-        srv_act.request.value = 0.5;
+        srv_act.request.value = 1;
         vec_velocity_[0].call(srv_act);
         vec_velocity_[2].call(srv_act);
-        srv_act.request.value = -0.5;
+        srv_act.request.value = -1;
         vec_velocity_[1].call(srv_act);
         vec_velocity_[3].call(srv_act);
 
@@ -118,10 +130,10 @@ void SensorEnable::teleop(int key){
         break;
 
       case 314 :
-        srv_act.request.value = -0.5;
+        srv_act.request.value = -1;
         vec_velocity_[0].call(srv_act);
         vec_velocity_[2].call(srv_act);
-        srv_act.request.value = 0.5;
+        srv_act.request.value = 1;
         vec_velocity_[1].call(srv_act);
         vec_velocity_[3].call(srv_act);
 
