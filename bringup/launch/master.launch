@@ -10,9 +10,6 @@
   <!-- Sensor Enable -->
   <node name="Teleop" pkg="bringup" type="enable" respawn="false" output="screen"/>
   
-  <!-- MAP -->
-  <node name="map_server" pkg="map_server" type="map_server" args="$(find bringup)/maps/home.yaml"/>
-
   <!-- Dynamic transform -->
   <node name="Dynamic" pkg="bringup" type="dynamic_link_camera" respawn="false" output="screen"/>
 

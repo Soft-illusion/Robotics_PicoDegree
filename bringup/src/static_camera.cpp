@@ -9,7 +9,7 @@ void StaticCamera::publish_camera_link(float value){
   tf::Transform transform;
   transform.setOrigin( tf::Vector3(0,0,0));
   tf::Quaternion q;
-  q.setRPY(0, 0 ,value );
+  q.setRPY(0, 0 ,value + 1.57 ); // 90 degree off camera in proto
   transform.setRotation(q);
   br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "rotary_link" , "camera_link"));
 }
