@@ -7,12 +7,6 @@
     <arg name="no_gui" value="false"/>
   </include>
 
-  <!-- Sensor Enable -->
-  <node name="Teleop" pkg="bringup" type="enable" respawn="false" output="screen"/>
-  
-  <!-- Dynamic transform -->
-  <node name="Dynamic" pkg="bringup" type="dynamic_link_camera" respawn="false" output="screen"/>
-
   <!-- URDF -->
   <include file="$(find bringup)/robot_description/launch/description.launch"/>
 
