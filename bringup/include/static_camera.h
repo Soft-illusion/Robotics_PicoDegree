@@ -30,14 +30,17 @@ class StaticCamera{
 
     public:
         StaticCamera(ros::NodeHandle* nodehandle);
+        // Callbacks
         void NameCallBack(const std_msgs::String& msg);
         void LinearCallBack(const webots_ros::Float64Stamped& msg);
         void RotaryCallBack(const webots_ros::Float64Stamped& msg);
+        // Enable sensors subscribers
         void getLinear();
         void getRotary();
+        // publishing transform.
         void publish_linear_link(float value);
-        void ToEulerAngles(float x, float y , float z , float w );
         void publish_camera_link(float value);
+        void ToEulerAngles(float x, float y , float z , float w );
 
 };
 

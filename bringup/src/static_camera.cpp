@@ -4,14 +4,11 @@ StaticCamera::StaticCamera(ros::NodeHandle* nodehandle):nh_(*nodehandle){
     subscribe_name_ = nh_.subscribe("/model_name", 1, &StaticCamera::NameCallBack,this);
 }
 
-void StaticCamera::publish_camera_link(float value){
-  static tf::TransformBroadcaster br;
-  tf::Transform transform;
-  transform.setOrigin( tf::Vector3(0,0,0));
-  tf::Quaternion q;
-  q.setRPY(0, 0 ,value + 1.57 ); // 90 degree off camera in proto
-  transform.setRotation(q);
-  br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "rotary_link" , "camera_link"));
+void StaticCamera::NameCallBack(const std_msgs::String& msg){
+    StaticCamera::robot_name_ = msg.data;
+    // call other sensor subscribe other sensord with the name.
+    getLinear();
+    getRotary();
 }
 
 void StaticCamera::getLinear(){
@@ -20,12 +17,6 @@ void StaticCamera::getLinear(){
 
 void StaticCamera::getRotary(){
     subscribe_rotary_ = nh_.subscribe(robot_name_+"/Rotation_sensor/value", 1, &StaticCamera::RotaryCallBack,this);
-}
-
-void StaticCamera::NameCallBack(const std_msgs::String& msg){
-    StaticCamera::robot_name_ = msg.data;
-    getLinear();
-    getRotary();
 }
 
 void StaticCamera::LinearCallBack(const webots_ros::Float64Stamped& msg){
@@ -64,12 +55,19 @@ void StaticCamera::publish_linear_link(float value){
   transform.setOrigin( tf::Vector3(0,0,value+0.05/2)); //Robot height/2 offset for linear link
   tf::Quaternion q;
   q.setRPY(0, 0, 0);
-  // transform.setRotation(tf::Quaternion(current_rot_x,current_rot_y,current_rot_z,current_rot_w));
   transform.setRotation(q);
-
   br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "base_link" , "linear_link"));
 }
 
+void StaticCamera::publish_camera_link(float value){
+  static tf::TransformBroadcaster br;
+  tf::Transform transform;
+  transform.setOrigin( tf::Vector3(0,0,0));
+  tf::Quaternion q;
+  q.setRPY(0, 0 ,value + 1.57 ); // 90 degree off camera in proto
+  transform.setRotation(q);
+  br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "rotary_link" , "camera_link"));
+}
 
 int main(int argc, char **argv){
     ros::init(argc, argv, "static_camera");
