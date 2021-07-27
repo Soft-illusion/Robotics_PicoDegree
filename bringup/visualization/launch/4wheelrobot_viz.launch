@@ -3,6 +3,6 @@
   <!-- launch a Rviz for the minial robot view -->
   <arg name="rvizconfig" default="$(find bringup)/visualization/rviz_cfg/4wheelrobot.rviz" />
 
-  <node name="$(anon name)" pkg="rviz" type="rviz" args="-d $(arg rvizconfig) -f map" required="true" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig) -f map" required="true" />
 
 </launch>

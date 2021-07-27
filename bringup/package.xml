@@ -52,6 +52,8 @@
   <build_depend>webots-ros</build_depend>
   <build_depend>robot_state_publisher</build_depend>
   <exec_depend>robot_state_publisher</exec_depend>
+  <build_depend>xacro</build_depend>
+  <exec_depend>xacro</exec_depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->
