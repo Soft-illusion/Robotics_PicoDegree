@@ -14,7 +14,7 @@ local_costmap:
     plugins: 
         - {name: static_layer,            type: "costmap_2d::StaticLayer"}
         - {name: inflation_layer,         type: "costmap_2d::InflationLayer"}
-        # - {name: obstacle_layer,          type: "costmap_2d::ObstacleLayer"}
+        - {name: obstacle_layer,          type: "costmap_2d::ObstacleLayer"}
 
     static_layer:
         enabled:              true
@@ -26,8 +26,8 @@ local_costmap:
         cost_scaling_factor:  5  
         inflation_radius:     0.3
 
-    # obstacle_layer:
-    #     observation_sources: laser_scan_sensor
-    #     footprint_clearing_enabled: true
-    #     laser_scan_sensor: {data_type: LaserScan, sensor_frame: base_link, clearing: true, marking: true, topic: /LaserScan}
+    obstacle_layer:
+        observation_sources: laser_scan_sensor
+        footprint_clearing_enabled: true
+        laser_scan_sensor: {data_type: LaserScan, sensor_frame: base_link, clearing: true, marking: true, topic: /LaserScan}
           

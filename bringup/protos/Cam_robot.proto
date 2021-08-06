@@ -232,8 +232,8 @@ PROTO Cam_robot [
                       }
                     }
                     Camera {
-                      translation 0 0.01 0
-                      rotation 0 0 1 -1.57
+                      translation 0 0 0
+                      rotation 0.577 0.577 -0.577 2.09
                       name "CAM"
                       fieldOfView 1
                       width 640
