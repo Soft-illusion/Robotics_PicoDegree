@@ -208,9 +208,15 @@ ${catkin_INCLUDE_DIRS}
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
+# making executable of sensor enable.cpp namely "enable" which will be called in launch file.
 add_executable(enable src/sensor_enable.cpp)
 target_link_libraries(enable ${catkin_LIBRARIES})
 add_dependencies (enable ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+# making executable of static_camera.cpp namely "dynamic_link_camera" which will be called in launch file.
+add_executable(dynamic_link_camera src/static_camera.cpp)
+target_link_libraries(dynamic_link_camera ${catkin_LIBRARIES})
+add_dependencies (dynamic_link_camera ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 add_executable(localize src/localization.cpp)
 target_link_libraries(localize ${catkin_LIBRARIES})
