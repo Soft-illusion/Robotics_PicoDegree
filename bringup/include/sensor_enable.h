@@ -13,6 +13,7 @@
 #include <iostream>
 #include <geometry_msgs/Twist.h>
 
+// Robot constants
 #define TIME_STEP 32
 #define WHEEL_BASE 0.1
 #define WHEEL_RADIUS 0.06
@@ -38,8 +39,8 @@ class SensorEnable{
         void NameCallBack(const std_msgs::String& msg);
         void KeyboardCallBack(const webots_ros::Int32Stamped& msg);
         void CmdvelCallBack(const geometry_msgs::Twist& msg);
-        void Initialize_sensors();
-        void teleop(int);
+        void Initialize_sensors(); // function for initializing sensors.
+        void teleop(int); // Function for teleoperation function.
 };
 
 #endif

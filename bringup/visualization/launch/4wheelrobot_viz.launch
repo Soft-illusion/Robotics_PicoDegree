@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- launch a Rviz for the minial robot view -->
+  <arg name="rvizconfig" default="$(find navigation)/rviz/nav.rviz" />
+
+  <node name="$(anon name)" pkg="rviz" type="rviz" args="-d $(arg rvizconfig) -f map" required="true" />
+
+</launch>

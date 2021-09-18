@@ -1,3 +1,5 @@
+base_local_planner: base_local_planner/TrajectoryPlannerROS
+
 TrajectoryPlannerROS:
     max_vel_x: 0.45
     min_vel_x: 0.1

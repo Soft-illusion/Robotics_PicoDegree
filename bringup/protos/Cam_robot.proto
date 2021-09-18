@@ -185,6 +185,9 @@ PROTO Cam_robot [
               maxPosition 0.2
               minPosition 0
             }
+            PositionSensor {
+              name "Linear_sensor"
+            }
           ]
           endPoint Solid {
             translation -0.085 0.17 0
@@ -207,6 +210,11 @@ PROTO Cam_robot [
                 device [
                   RotationalMotor {
                     name "RM"
+                    maxPosition 1.57
+                    minPosition -1.57
+                  }
+                  PositionSensor {
+                    name "Rotation_sensor"
                   }
                 ]
                 endPoint Solid {
@@ -224,8 +232,8 @@ PROTO Cam_robot [
                       }
                     }
                     Camera {
-                      translation 0 0.01 0
-                      rotation 0 0 1 -1.57
+                      translation 0 0 0
+                      rotation 0.577 0.577 -0.577 2.09
                       name "CAM"
                       fieldOfView 1
                       width 640
