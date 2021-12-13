@@ -14,10 +14,14 @@ std_msgs
 webots_ros
 sensor_msgs
 geometry_msgs
+darknet_ros_msgs
+cv_bridge
+image_transport
 )
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
+# find_package(OpenCV 2 REQUIRED)
 
 
 ## Uncomment this if the package has a setup.py. This macro ensures
@@ -106,11 +110,13 @@ geometry_msgs
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES bringup
-#  CATKIN_DEPENDS other_catkin_pkg
-#  DEPENDS system_lib
-)
+    INCLUDE_DIRS
+    CATKIN_DEPENDS roscpp
+                   sensor_msgs
+                   std_msgs
+                   cv_bridge
+                   image_transport
+  )
 
 ###########
 ## Build ##
@@ -121,6 +127,7 @@ catkin_package(
 include_directories(
 include
 ${catkin_INCLUDE_DIRS}
+${OpenCV_INCLUDE_DIRS}
 )
 
 ## Declare a C++ library
@@ -219,3 +226,7 @@ add_dependencies (dynamic_link_camera ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catk
 add_executable(localize src/localization.cpp)
 target_link_libraries(localize ${catkin_LIBRARIES})
 add_dependencies (localize ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+add_executable(image_detect src/Image_processor.cpp)
+target_link_libraries(image_detect ${catkin_LIBRARIES} ${OpenCV_INCLUDE_DIRS})
+add_dependencies (image_detect ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})

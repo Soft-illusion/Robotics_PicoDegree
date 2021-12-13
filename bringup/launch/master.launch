@@ -25,7 +25,16 @@
   <!-- Localization -->
   <node name="Localization" pkg="bringup" type="localize" respawn="false" output="screen"/>
 
-  <!-- Rviz -->
+  <!-- Move base -->
 	<include file="$(find navigation)/launch/move_base.launch"/>
+
+  <!-- Simple Goal -->
+	<include file="$(find simple_navigation_goals)/launch/movebase_seq.launch"/>
+
+  <!-- Darknet ROS -->
+	<include file="$(find darknet_ros)/launch/darknet_ros.launch"/>
+
+  <!-- Image processing -->
+  <node name="Image_process" pkg="bringup" type="image_detect" respawn="false" output="screen"/>
   
 </launch>

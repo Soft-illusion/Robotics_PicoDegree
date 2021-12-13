@@ -2,6 +2,8 @@
 
 StaticCamera::StaticCamera(ros::NodeHandle* nodehandle):nh_(*nodehandle){
     subscribe_name_ = nh_.subscribe("/model_name", 1, &StaticCamera::NameCallBack,this);
+    image_pub_ = nh_.advertise<sensor_msgs::Image>("/camera/rgb/image_raw",1000);
+
 }
 
 void StaticCamera::publish_camera_link(float value){
@@ -22,11 +24,21 @@ void StaticCamera::getRotary(){
     subscribe_rotary_ = nh_.subscribe(robot_name_+"/Rotation_sensor/value", 1, &StaticCamera::RotaryCallBack,this);
 }
 
+void StaticCamera::getImage(){
+    subscribe_image_ = nh_.subscribe(robot_name_+"/CAM/image", 1, &StaticCamera::ImageCallBack,this);
+}
+
 void StaticCamera::NameCallBack(const std_msgs::String& msg){
     StaticCamera::robot_name_ = msg.data;
     getLinear();
     getRotary();
+    getImage();
 }
+
+void StaticCamera::ImageCallBack(const sensor_msgs::Image& msg){
+    image_pub_.publish(msg);
+}
+
 
 void StaticCamera::LinearCallBack(const webots_ros::Float64Stamped& msg){
     publish_linear_link(msg.data);
