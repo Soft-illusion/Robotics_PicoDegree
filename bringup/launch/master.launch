@@ -31,10 +31,10 @@
   <!-- Simple Goal -->
 	<include file="$(find simple_navigation_goals)/launch/movebase_seq.launch"/>
 
-  <!-- Darknet ROS -->
-	<include file="$(find darknet_ros)/launch/darknet_ros.launch"/>
-
   <!-- Image processing -->
   <node name="Image_process" pkg="bringup" type="image_detect" respawn="false" output="screen"/>
-  
+
+
+  <!-- Darknet ROS -->
+	<include file="$(find darknet_ros)/launch/darknet_ros.launch"/>  
 </launch>

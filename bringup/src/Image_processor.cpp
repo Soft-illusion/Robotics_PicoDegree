@@ -8,7 +8,7 @@ ImageProcessor::ImageProcessor(ros::NodeHandle* nodehandle):nh_(*nodehandle){
 }
 
 void ImageProcessor::ImageCallBack(const sensor_msgs::Image& msg){
-    std::cout<<"Image callback"<<std::endl;
+    // std::cout<<"Image callback"<<std::endl;
     // Save current msg as a current image
     try{
     cv_ptr_ = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
@@ -27,7 +27,6 @@ void ImageProcessor::ResultCallBack(const darknet_ros_msgs::BoundingBoxes& msg){
             std::ostringstream path;
             path << ros::package::getPath("bringup") << "/images/human" << num_ <<".png";
 
-            std::cout<<"Saving image = "<< path.str() <<std::endl;
             cv::imwrite(path.str(),cv_ptr_->image);
             num_++;
 
