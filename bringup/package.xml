@@ -56,6 +56,9 @@
   <build_depend>cv_bridge</build_depend>
   <build_depend>image_transport</build_depend>
   <build_depend>std_msgs</build_depend>
+  <build_depend>map_server</build_depend>
+  <build_depend>move_base</build_depend>
+  <build_depend>rviz</build_depend>
 
 
   <exec_depend>robot_state_publisher</exec_depend>
@@ -64,11 +67,9 @@
   <exec_depend>std_msgs</exec_depend>
   <exec_depend>cv_bridge</exec_depend>
   <exec_depend>image_transport</exec_depend>
-
-
-
-
-
+  <exec_depend>map_server</exec_depend>
+  <exec_depend>move_base</exec_depend>
+  <exec_depend>rviz</exec_depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
