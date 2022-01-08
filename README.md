@@ -37,3 +37,17 @@ The tutotial series has been divided into the following 7 videos:
  **6. Obstacle Avoidance** - Now when the robot is traveling from point A to B we don’t want it crashing into obstacles or humans. Hence we need good obstacle avoidance algorithms. It will also plan a path around obstacles.
  
  **7. Applications** - Finally we will use all the above-learned knowledge to enable our robot to perform specific tasks/applications.
+
+
+## To run docker instance of the project.
+[Install docker](https://docs.docker.com/engine/install/ubuntu/)
+[Install nvidia drivers for docker](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html)
+
+```
+sudo docker run --gpus=all -it -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:rw softillusion/robotics_picodegree:latest roslaunch bringup master.launch
+```
+
+## To run the project on native ubuntu machine.
+```
+
+```
