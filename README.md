@@ -40,7 +40,9 @@ The tutotial series has been divided into the following 7 videos:
 
 
 ## To run docker instance of the project.
+
 [Install docker](https://docs.docker.com/engine/install/ubuntu/)
+
 [Install nvidia drivers for docker](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html)
 
 ```
@@ -48,6 +50,27 @@ sudo docker run --gpus=all -it -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:rw so
 ```
 
 ## To run the project on native ubuntu machine.
+
+```
+mkdir -p ~/webots_ws/src 
+cd ~/webots_ws/src && git clone https://github.com/Soft-illusion/Robotics_PicoDegree
+git clone --recursive https://github.com/leggedrobotics/darknet_ros
 ```
 
+Install rosdep to install necessary packages
+
+```
+sudo apt-get install python3-rosdep python3-rosinstall-generator python3-vcstool build-essential
+sudo rosdep init && rosdep update
+rosdep install --from-paths src --ignore-src -r -y 
+source /opt/ros/noetic/setup.bash
+cd ~/webots_ws/src && catkin_make -DCMAKE_BUILD_TYPE=Release
+```
+
+Its time to run the package
+
+```
+source /opt/ros/noetic/setup.bash
+source ~/webots_ws/devel/setup.bash
+roslaunch bringup master.launch
 ```
