@@ -1,4 +1,5 @@
 #include <Image_processor.h>
+#include <unistd.h>
 
 ImageProcessor::ImageProcessor(ros::NodeHandle* nodehandle):nh_(*nodehandle){
     subscribe_image_ = nh_.subscribe("/camera/rgb/image_raw", 1, &ImageProcessor::ImageCallBack,this);
@@ -29,6 +30,7 @@ void ImageProcessor::ResultCallBack(const darknet_ros_msgs::BoundingBoxes& msg){
 
             cv::imwrite(path.str(),cv_ptr_->image);
             num_++;
+            usleep(100000); //Sleep for 100ms
 
         }
     }
