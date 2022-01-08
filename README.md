@@ -46,7 +46,9 @@ The tutotial series has been divided into the following 7 videos:
 [Install nvidia drivers for docker](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html)
 
 ```
-sudo docker run --gpus=all -it -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:rw softillusion/robotics_picodegree:latest roslaunch bringup master.launch
+xhost +local:root > /dev/null 2>&1
+sudo docker run --gpus=all -it -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:rw softillusion/robotics_picodegree:latest
+roslaunch bringup master.launch
 ```
 
 ## To run the project on native ubuntu machine.
