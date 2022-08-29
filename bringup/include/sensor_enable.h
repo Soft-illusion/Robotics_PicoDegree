@@ -6,6 +6,7 @@
 #include "webots_ros/Int32Stamped.h"
 #include <webots_ros/set_float.h>
 #include <webots_ros/set_int.h>
+#include <webots_ros/set_bool.h>
 #include <webots_ros/robot_get_device_list.h>
 #include <std_msgs/String.h>
 #include <signal.h>
@@ -27,6 +28,7 @@ class SensorEnable{
         ros::Subscriber subscribe_name_;
         ros::Subscriber subscribe_keyboard_;
         webots_ros::set_int srv_timestep;
+        webots_ros::set_bool srv_bool;
         webots_ros::set_float srv_inf;
         webots_ros::set_float srv_zero;
         std::vector<ros::ServiceClient> vec_velocity_;

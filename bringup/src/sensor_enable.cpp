@@ -36,6 +36,13 @@ void SensorEnable::Initialize_sensors(){
         ros::service::waitForService(SensorEnable::robot_name_ + *sensor + "/enable");
         vec_client.back().call(srv_timestep); // enable with the timestep
     }
+    vec_client.push_back(nh_.serviceClient<webots_ros::set_bool>(SensorEnable::robot_name_+ "/Lidar" + "/enable_point_cloud")); // service name
+    ros::service::waitForService(SensorEnable::robot_name_+ "/Lidar/enable_point_cloud");
+    bool val = true;
+    srv_bool.request.value = val;
+    vec_client.back().call(srv_bool); 
+
+
     subscribe_keyboard_ = nh_.subscribe(SensorEnable::robot_name_+"/keyboard/key", 1, &SensorEnable::KeyboardCallBack,this);
     std::vector<std::string> actuators{"/wheel1" , "/wheel2" ,"/wheel3" , "/wheel4" , "/linear" , "/RM"};
     

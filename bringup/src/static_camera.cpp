@@ -77,3 +77,32 @@ int main(int argc, char **argv){
 
     return 0;
 }
+
+
+// Intrinsic paramteters of a camera
+// void StaticCamera::CameraCallBack(const sensor_msgs::Image& msg){
+//     camera_topic_.publish(msg);
+//     cam_info_msg_.header = msg.header;
+//     cam_info_msg_.height = msg.height;
+//     cam_info_msg_.width = msg.width;
+
+//     int FOV = 1;
+//     float VFOV = 2 * atan(tan(FOV * 0.5) * (msg.height / msg.width));
+
+//     auto fx = (msg.width/2) / tan(FOV / 2);
+//     auto fy = (msg.height/2) / tan(VFOV / 2);
+//     cam_info_msg_.K[0] = fx;
+//     cam_info_msg_.K[2] = (msg.width/2);
+//     cam_info_msg_.K[4] = fy;
+//     cam_info_msg_.K[5] = (msg.height/2);
+//     cam_info_msg_.K[8] = 1;
+
+//     camera_info_.publish(cam_info_msg_);
+
+// }
+
+// void StaticCamera::DepthCallBack(const sensor_msgs::Image& msg){
+//     new_depth_msg = msg;
+//     new_depth_msg.header.frame_id = robot_name_+"/3DCAM";
+//     depth_image_.publish(new_depth_msg);
+// }

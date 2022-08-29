@@ -147,9 +147,10 @@ PROTO Cam_robot [
           translation 0 0.06 0
           name "Lidar"
           fieldOfView 6.28
-          numberOfLayers 1
+          numberOfLayers 64
+          verticalFieldOfView 1.57
           horizontalResolution 1024
-          maxRange 5.0 
+          maxRange 5.0
         }
 
         DistanceSensor {

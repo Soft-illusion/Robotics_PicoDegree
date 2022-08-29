@@ -26,7 +26,17 @@
   <!-- Localization -->
   <node name="Localization" pkg="bringup" type="localize" respawn="false" output="screen"/>
 
-  <!-- Rviz -->
-	<include file="$(find navigation)/launch/move_base.launch"/>
+  <!-- Movebase -->
+	<!-- <include file="$(find navigation)/launch/move_base.launch"/> -->
+
+  <!-- Point Cloud to PointCloud2 -->
+	<!-- <include file="$(find point_cloud_converter)/launch/point_cloud_converter.launch"/> -->
+
+  <!-- Octomap  -->
+	<!-- <include file="$(find octomap_server)/launch/octomap_mapping.launch "/> -->
+
+
+
+  <node pkg="tf" type="static_transform_publisher" name="base_point_cloud_tf" args="0 0 0 1.57 0 1.57 base_link point_cloud_link 100" />
   
 </launch>
