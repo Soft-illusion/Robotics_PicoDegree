@@ -38,5 +38,9 @@
 
 
   <node pkg="tf" type="static_transform_publisher" name="base_point_cloud_tf" args="0 0 0 1.57 0 1.57 base_link point_cloud_link 100" />
+  <!-- Octomap -->
+	<include file="$(find octomap_server)/launch/octomap_mapping.launch"/>
+  <!-- PointCloud to PointCloud2 -->
+	<include file="$(find point_cloud_converter)/launch/point_cloud_converter.launch"/>
   
 </launch>
